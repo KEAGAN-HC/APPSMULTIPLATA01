@@ -37,29 +37,29 @@ function TaskModal({ currentTask, addTask, updateTask, setShowModal }) {
 
   return ReactDOM.createPortal(
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-      <div className="bg-custom-pink-50 p-6 rounded-xl shadow-lg w-96 border border-custom-pink-300">
-        <h2 className="text-xl mb-4 text-custom-pink-900 font-bold">{currentTask ? "Editar Tarea" : "Nueva Tarea"}</h2>
+      <div className="bg-white p-6 rounded">
+        <h2 className="text-xl mb-4">{currentTask ? "Editar Tarea" : "Nueva Tarea"}</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
-            <label className="block text-custom-pink-900 font-medium">Nombre</label>
+            <label className="block">Nombre</label>
             <input
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="border px-2 py-1 w-full rounded-lg bg-white text-custom-pink-900 border-custom-pink-300 focus:ring-2 focus:ring-custom-pink-500"
+              className="border px-2 py-1 w-full"
               required
             />
           </div>
           <div className="mb-4">
-            <label className="block text-custom-pink-900 font-medium">Descripción</label>
+            <label className="block">Descripción</label>
             <textarea
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              className="border px-2 py-1 w-full rounded-lg bg-white text-custom-pink-900 border-custom-pink-300 focus:ring-2 focus:ring-custom-pink-500"
+              className="border px-2 py-1 w-full"
             />
           </div>
           <div className="mb-4">
-            <label className="flex items-center text-custom-pink-900 font-medium">
+            <label className="flex items-center">
               <input
                 type="checkbox"
                 checked={completed}
@@ -70,17 +70,10 @@ function TaskModal({ currentTask, addTask, updateTask, setShowModal }) {
             </label>
           </div>
           <div className="flex justify-end">
-            <button 
-              type="button" 
-              className="bg-custom-pink-300 text-custom-pink-900 px-4 py-2 rounded-xl mr-2 hover:bg-custom-pink-400 transition"
-              onClick={() => setShowModal(false)}
-            >
+            <button type="button" className="bg-gray-500 text-white px-4 py-2 rounded mr-2" onClick={() => setShowModal(false)}>
               Cancelar
             </button>
-            <button 
-              type="submit" 
-              className="bg-custom-pink-600 text-white px-4 py-2 rounded-xl hover:bg-custom-pink-700 transition"
-            >
+            <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">
               {currentTask ? "Actualizar" : "Agregar"}
             </button>
           </div>

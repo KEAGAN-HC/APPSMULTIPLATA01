@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import ReactDOM from "react-dom";
 import TaskList from "./TaskList";
 import TaskModal from "./TaskModal";
 
@@ -41,9 +42,9 @@ function App() {
 
   return (
     <div className="p-6 bg-custom-pink-50 min-h-screen">
-      <h1 className="text-2xl font-bold text-custom-pink-900 mb-4">Gestion de TAREAS</h1>
+      <h1 className="text-2xl font-bold text-custom-pink-900 mb-4">Gestión de Tareas</h1>
       <button
-        className="bg-custom-pink-600 text-white px-4 py-2 rounded-xl hover:bg-custom-pink-700 transition"
+        className="bg-custom-pink-600 text-black px-4 py-2 rounded-xl hover:bg-custom-pink-700 transition shadow-md"
         onClick={handleAddTask}
       >
         Nueva Tarea
